@@ -23,10 +23,9 @@ class DetailViewController: UIViewController, UNUserNotificationCenterDelegate{
 
     @IBOutlet weak var numberFood: UILabel!
     @IBOutlet weak var foodName: UILabel!
-    @IBOutlet weak var foodPrice: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var stepper: UIStepper!
-    
+    @IBOutlet weak var foodPrice: UILabel!
     
     var DetailPresenterNesnesi:ViewToPresenterDetailProtocol?
     
@@ -55,7 +54,6 @@ class DetailViewController: UIViewController, UNUserNotificationCenterDelegate{
                 }
         }
        
-        
         
         DetailRouter.createModule(ref: self)
         
@@ -93,8 +91,8 @@ class DetailViewController: UIViewController, UNUserNotificationCenterDelegate{
             
         }else{
             
-            if let ys = numberFood.text, let y = food, let yf = foodPrice.text  {
-            DetailPresenterNesnesi?.add(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(yf)!, yemek_siparis_adet: Int(ys)!, kullanici_adi: "ece_ucak")
+            if let ys = numberFood.text, let y = food, let yf = foodPrice.text {
+                DetailPresenterNesnesi?.add(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(yf) ?? 0, yemek_siparis_adet: Int(ys)!, kullanici_adi: "ece_ucak")
                 
             }
             

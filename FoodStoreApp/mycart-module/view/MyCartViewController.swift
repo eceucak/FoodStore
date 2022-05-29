@@ -25,8 +25,6 @@ class MyCartViewController: UIViewController {
         myCartTableView.dataSource = self
         emptyCart.isHidden = true
     
-        
-        sepetButton.backgroundColor = .systemGreen
         CartRouter.createModule(ref: self)
         // Do any additional setup after loading the view.
     }
